@@ -15,7 +15,7 @@ typedef void (^Completion)(BOOL success);
 typedef void(^Completed)(UIImage *image);
 
 #pragma mark - API Methods
-- (void)apiRequest:(Completion)completion;
+- (void)apiRequestAllCountries:(Completion)completion;
 
 #pragma mark - Table Data Methods
 - (NSInteger)numberOfSections;
@@ -23,7 +23,7 @@ typedef void(^Completed)(UIImage *image);
 - (NSString *)titleForHeaderInSection:(NSInteger)section;
 - (NSArray *)sectionIndexTitles;
 - (NSString *)countryNameAtIndex:(NSIndexPath *)indexPath;
-- (void)countryImageAtIndex:(NSIndexPath *)indexPath completed:(Completed)completed;
+- (NSURL *)countryImageURLAtIndex:(NSIndexPath *)indexPath;
 - (NSString *)countryCodeAtIndex:(NSIndexPath *)indexPath;
 
 @end

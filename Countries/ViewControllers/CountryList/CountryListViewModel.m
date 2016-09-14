@@ -26,7 +26,7 @@
 
 #pragma mark - API Methods
 
-- (void)apiRequest:(Completion)completion {
+- (void)apiRequestAllCountries:(Completion)completion {
     
     NSString *request = [NSString stringWithFormat:@"%@%@",BaseURL,AllCountries];
     
@@ -120,17 +120,12 @@
 }
 
 - (NSString *)countryNameAtIndex:(NSIndexPath *)indexPath {
-    return [NSString stringWithFormat:@"%@ (%@)", [self countryModelAtIndex:indexPath].name, [self countryModelAtIndex:indexPath].callingCodes[0]];
+    return [NSString stringWithFormat:@"%@ (+%@)", [self countryModelAtIndex:indexPath].name, [self countryModelAtIndex:indexPath].callingCodes[0]];
 }
 
-- (void)countryImageAtIndex:(NSIndexPath *)indexPath completed:(Completed)completed{
-    
+- (NSURL *)countryImageURLAtIndex:(NSIndexPath *)indexPath {
     NSString *imageURL = [NSString stringWithFormat:ImageBaseURL,[self countryModelAtIndex:indexPath].alpha2Code];
-    
-    ImageDownloader *downloader = [[ImageDownloader alloc] init];
-    [downloader imageURL:[NSURL URLWithString:imageURL] completed:^(UIImage *image) {
-        completed(image);
-    }];
+    return [NSURL URLWithString:imageURL];
 }
 
 - (NSString *)countryCodeAtIndex:(NSIndexPath *)indexPath {

@@ -19,6 +19,7 @@
 		1A3082751D8991D700C8F537 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3082741D8991D700C8F537 /* Country.m */; };
 		1A30827A1D89962100C8F537 /* CountryListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3082791D89962100C8F537 /* CountryListViewModel.m */; };
 		1A30827D1D89A7DC00C8F537 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A30827C1D89A7DC00C8F537 /* ImageDownloader.m */; };
+		1A3082821D89AE1F00C8F537 /* CountryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3082811D89AE1F00C8F537 /* CountryListCell.m */; };
 		8218E6A72127ADCE29949A29 /* libPods-Countries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8749BA37DBA0903F99E23FE0 /* libPods-Countries.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,8 @@
 		1A30827B1D89A7DC00C8F537 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageDownloader.h; path = DataLayer/ImageDownloader/ImageDownloader.h; sourceTree = "<group>"; };
 		1A30827C1D89A7DC00C8F537 /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageDownloader.m; path = DataLayer/ImageDownloader/ImageDownloader.m; sourceTree = "<group>"; };
 		1A30827F1D89AAA900C8F537 /* ImageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageConstants.h; sourceTree = "<group>"; };
+		1A3082801D89AE1F00C8F537 /* CountryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryListCell.h; path = ViewControllers/CountryList/CountryListCell.h; sourceTree = "<group>"; };
+		1A3082811D89AE1F00C8F537 /* CountryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryListCell.m; path = ViewControllers/CountryList/CountryListCell.m; sourceTree = "<group>"; };
 		4DA7A76D33ED9E9080618081 /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
 		8749BA37DBA0903F99E23FE0 /* libPods-Countries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Countries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D194DF004E444A4D41402E /* libPods-CountriesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CountriesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +154,8 @@
 				1A3082661D8989D900C8F537 /* CountryListTableViewController.m */,
 				1A3082781D89962100C8F537 /* CountryListViewModel.h */,
 				1A3082791D89962100C8F537 /* CountryListViewModel.m */,
+				1A3082801D89AE1F00C8F537 /* CountryListCell.h */,
+				1A3082811D89AE1F00C8F537 /* CountryListCell.m */,
 			);
 			name = CountryList;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				1A3082451D8988C800C8F537 /* AppDelegate.m in Sources */,
 				1A3082701D898CDD00C8F537 /* Network.m in Sources */,
 				1A30827A1D89962100C8F537 /* CountryListViewModel.m in Sources */,
+				1A3082821D89AE1F00C8F537 /* CountryListCell.m in Sources */,
 				1A3082421D8988C800C8F537 /* main.m in Sources */,
 				1A30827D1D89A7DC00C8F537 /* ImageDownloader.m in Sources */,
 				1A3082751D8991D700C8F537 /* Country.m in Sources */,

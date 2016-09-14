@@ -6,22 +6,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Country List Table View Controller-->
+        <!--List-->
         <scene sceneID="6Dh-0y-Grk">
             <objects>
                 <tableViewController id="WxV-UA-fY0" customClass="CountryListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NXP-xV-Rkh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" id="NXP-xV-Rkh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="1Ia-f9-RyE">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="54" id="1Ia-f9-RyE" customClass="CountryListCell">
+                                <rect key="frame" x="0.0" y="92" width="414" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Ia-f9-RyE" id="oLt-C9-WZw">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="414" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="otM-uy-oHg">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="37" id="F8d-hc-tSi"/>
+                                                <constraint firstAttribute="height" constant="27" id="w3Q-TR-xcb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd9-eO-wIt">
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Cd9-eO-wIt" secondAttribute="trailing" constant="8" id="Aoy-t1-Ldd"/>
+                                        <constraint firstItem="Cd9-eO-wIt" firstAttribute="top" secondItem="oLt-C9-WZw" secondAttribute="top" constant="17" id="P8P-95-NwY"/>
+                                        <constraint firstItem="otM-uy-oHg" firstAttribute="leading" secondItem="oLt-C9-WZw" secondAttribute="leading" constant="8" id="Rxd-tm-hd1"/>
+                                        <constraint firstAttribute="bottom" secondItem="otM-uy-oHg" secondAttribute="bottom" constant="13" id="dSS-Ib-bJ7"/>
+                                        <constraint firstItem="otM-uy-oHg" firstAttribute="top" secondItem="oLt-C9-WZw" secondAttribute="top" constant="14" id="o7D-jy-j66"/>
+                                        <constraint firstItem="Cd9-eO-wIt" firstAttribute="leading" secondItem="otM-uy-oHg" secondAttribute="trailing" constant="8" id="s3B-aN-6YZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="flagImageView" destination="otM-uy-oHg" id="QbR-nM-xRX"/>
+                                    <outlet property="nameLabel" destination="Cd9-eO-wIt" id="Eup-7m-KX5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -29,20 +54,23 @@
                             <outlet property="delegate" destination="WxV-UA-fY0" id="wXh-Cf-LDl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Rxe-BL-aCJ"/>
+                    <navigationItem key="navigationItem" title="List" id="Rxe-BL-aCJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Y9-7i-Lvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="140.77961019490255"/>
+            <point key="canvasLocation" x="1071.0144927536232" y="140.21739130434784"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AyU-xx-yMs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uCd-nv-Buh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GTV-Ix-7Fi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GTV-Ix-7Fi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
