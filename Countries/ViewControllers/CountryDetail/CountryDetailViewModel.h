@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface CountryDetailViewModel : NSObject
 
@@ -24,6 +25,10 @@ typedef void (^Completion)(BOOL success);
 - (NSURL *)countryImageURL;
 
 //Section - 1
+- (MKCoordinateRegion)mapRegion;
+- (MKPointAnnotation *)mapAnnotation;
+
+//Section - 2
 - (NSString *)labelAtIndex:(NSIndexPath *)indexPath;
 - (NSString *)valuesAtIndex:(NSIndexPath *)indexPath;
 

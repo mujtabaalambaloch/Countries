@@ -10,6 +10,7 @@
 #import "CountryDetailViewModel.h"
 #import "Activity.h"
 #import "FlagTableViewCell.h"
+#import "MapTableViewCell.h"
 #import "UIImageView+WebCache.h"
 
 @interface CountryDetailTableViewController () {
@@ -21,14 +22,23 @@
 @implementation CountryDetailTableViewController
 
 static NSString *const FlagCell = @"FlagCell";
+static NSString *const MapCell = @"MapCell";
+
+//#define METERS_PER_MILE 1609.344;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     self.navigationItem.title = @"Country Details";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"FlagTableViewCell" bundle:nil] forCellReuseIdentifier:FlagCell];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"MapTableViewCell" bundle:nil] forCellReuseIdentifier:MapCell];
+    
+    self.tableView.estimatedRowHeight = 150;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     viewModel = [[CountryDetailViewModel alloc] init];
     [Activity showLoadingIndicator];
@@ -66,6 +76,15 @@ static NSString *const FlagCell = @"FlagCell";
                 cell.flagImageView.image = [UIImage imageNamed:@"NoImage"];
             }
         }];
+        
+        return cell;
+        
+    } else if (indexPath.section == 1) {
+        
+        MapTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MapCell forIndexPath:indexPath];
+        
+        [cell.mapView  setRegion:[viewModel mapRegion] animated:NO];
+        [cell.mapView addAnnotation:[viewModel mapAnnotation]];
         
         return cell;
         

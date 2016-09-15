@@ -19,8 +19,22 @@
              @"capital": @"capital",
              @"demonym": @"demonym",
              @"latlng":@"latlng",
-             @"population": @"population"
+             @"population": @"population",
+             @"area":@"area",
+             @"currencies":@"currencies"
              };
+}
+
++ (NSValueTransformer *)areaJSONTransformer {
+    
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+       
+        if (value == nil) {
+            return [NSNumber numberWithInteger:10000];
+        } else {
+            return value;
+        }
+    }];
 }
 
 @end

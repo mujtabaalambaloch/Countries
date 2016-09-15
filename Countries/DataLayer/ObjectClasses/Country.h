@@ -14,9 +14,11 @@
 @property (nonatomic, copy, readonly) NSString * alpha2Code;
 @property (nonatomic, copy, readonly) NSString * alpha3Code;
 @property (nonatomic, copy, readonly) NSArray * callingCodes;
+@property (nonatomic, copy, readonly) NSArray * currencies;
 @property (nonatomic, copy, readonly) NSString * capital;
 @property (nonatomic, copy, readonly) NSString * demonym;
 @property (nonatomic, copy, readonly) NSArray * latlng;
 @property (nonatomic, assign, readonly) NSInteger population;
+@property (nonatomic, assign, readonly) NSInteger area;
 
 @end

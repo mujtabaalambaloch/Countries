@@ -52,27 +52,39 @@
         NSError *error = nil;
         countryModel = [MTLJSONAdapter modelOfClass:Country.class fromJSONDictionary:dict error:&error];
         
-        labelsArray = @[@"Capital", @"Population",@"Calling Code", @"Alpha Code"];
+        labelsArray = @[@"Capital", @"Population",@"Calling Code", @"Currencies", @"Alpha Codes"];
         
         NSString *population = [NSNumberFormatter localizedStringFromNumber:@(countryModel.population) numberStyle:NSNumberFormatterDecimalStyle];
         
         NSString *callingCode = [NSString stringWithFormat:@"+%@",countryModel.callingCodes[0]];
         
-        valuesArray = @[countryModel.capital,population, callingCode, countryModel.alpha2Code];
+        NSMutableString *currencies = [[NSMutableString alloc] init];
+        
+        for (NSInteger i = 0; i < countryModel.currencies.count; i++) {
+            
+            if (i == 0) {
+                [currencies appendString:countryModel.currencies[i]];
+            } else {
+                [currencies appendString:@","];
+                [currencies appendString:countryModel.currencies[i]];
+            }
+        }
+        
+        NSString *alphaCodes = [NSString stringWithFormat:@"%@, %@", countryModel.alpha2Code, countryModel.alpha3Code];
+        
+        valuesArray = @[countryModel.capital,population,callingCode, currencies, alphaCodes];
     }
 }
 
 #pragma mark - Table Data Methods
 
-
-
 - (NSInteger)numberOfSections {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section {
     
-    if (section == 0) {
+    if (section == 0 || section == 1) {
         return 1;
     }
     
@@ -92,6 +104,25 @@
 
 //Section - 1
 
+- (MKCoordinateRegion)mapRegion {
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = [countryModel.latlng[0] floatValue];
+    zoomLocation.longitude= [countryModel.latlng[1] floatValue];
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, countryModel.area, countryModel.area);
+    
+    return viewRegion;
+}
+
+- (MKPointAnnotation *)mapAnnotation {
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    annotation.coordinate = CLLocationCoordinate2DMake([countryModel.latlng[0] floatValue], [countryModel.latlng[1] floatValue]);
+    annotation.title = countryModel.name;
+    return annotation;
+}
+
+//Section - 2
+
 - (NSString *)labelAtIndex:(NSIndexPath *)indexPath {
     return labelsArray[indexPath.row];
 }
@@ -99,8 +130,5 @@
 - (NSString *)valuesAtIndex:(NSIndexPath *)indexPath {
     return valuesArray[indexPath.row];
 }
-
-
-
 
 @end

@@ -25,6 +25,9 @@
 		1A733C951D8AF50100B8AE78 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A733C941D8AF50100B8AE78 /* Activity.m */; };
 		1A733CA21D8B01A100B8AE78 /* FlagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A733CA01D8B01A100B8AE78 /* FlagTableViewCell.m */; };
 		1A733CA31D8B01A100B8AE78 /* FlagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A733CA11D8B01A100B8AE78 /* FlagTableViewCell.xib */; };
+		1A733CA71D8B08BC00B8AE78 /* MapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A733CA51D8B08BC00B8AE78 /* MapTableViewCell.m */; };
+		1A733CA81D8B08BC00B8AE78 /* MapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A733CA61D8B08BC00B8AE78 /* MapTableViewCell.xib */; };
+		1A733CAA1D8B096800B8AE78 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A733CA91D8B096800B8AE78 /* MapKit.framework */; };
 		8218E6A72127ADCE29949A29 /* libPods-Countries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8749BA37DBA0903F99E23FE0 /* libPods-Countries.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,10 @@
 		1A733C9F1D8B01A100B8AE78 /* FlagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlagTableViewCell.h; path = ViewControllers/CountryDetail/FlagTableViewCell.h; sourceTree = "<group>"; };
 		1A733CA01D8B01A100B8AE78 /* FlagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlagTableViewCell.m; path = ViewControllers/CountryDetail/FlagTableViewCell.m; sourceTree = "<group>"; };
 		1A733CA11D8B01A100B8AE78 /* FlagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FlagTableViewCell.xib; path = ViewControllers/CountryDetail/FlagTableViewCell.xib; sourceTree = "<group>"; };
+		1A733CA41D8B08BC00B8AE78 /* MapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapTableViewCell.h; path = ViewControllers/CountryDetail/MapTableViewCell.h; sourceTree = "<group>"; };
+		1A733CA51D8B08BC00B8AE78 /* MapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapTableViewCell.m; path = ViewControllers/CountryDetail/MapTableViewCell.m; sourceTree = "<group>"; };
+		1A733CA61D8B08BC00B8AE78 /* MapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapTableViewCell.xib; path = ViewControllers/CountryDetail/MapTableViewCell.xib; sourceTree = "<group>"; };
+		1A733CA91D8B096800B8AE78 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4DA7A76D33ED9E9080618081 /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
 		8749BA37DBA0903F99E23FE0 /* libPods-Countries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Countries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D194DF004E444A4D41402E /* libPods-CountriesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CountriesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A733CAA1D8B096800B8AE78 /* MapKit.framework in Frameworks */,
 				8218E6A72127ADCE29949A29 /* libPods-Countries.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +266,9 @@
 				1A733C9F1D8B01A100B8AE78 /* FlagTableViewCell.h */,
 				1A733CA01D8B01A100B8AE78 /* FlagTableViewCell.m */,
 				1A733CA11D8B01A100B8AE78 /* FlagTableViewCell.xib */,
+				1A733CA41D8B08BC00B8AE78 /* MapTableViewCell.h */,
+				1A733CA51D8B08BC00B8AE78 /* MapTableViewCell.m */,
+				1A733CA61D8B08BC00B8AE78 /* MapTableViewCell.xib */,
 			);
 			name = CountryDetail;
 			sourceTree = "<group>";
@@ -274,6 +285,7 @@
 		84C407FF9F8464A9D4B67A47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A733CA91D8B096800B8AE78 /* MapKit.framework */,
 				8749BA37DBA0903F99E23FE0 /* libPods-Countries.a */,
 				95D194DF004E444A4D41402E /* libPods-CountriesTests.a */,
 			);
@@ -384,6 +396,7 @@
 				1A3082501D8988C900C8F537 /* LaunchScreen.storyboard in Resources */,
 				1A30824D1D8988C900C8F537 /* Assets.xcassets in Resources */,
 				1A30824B1D8988C800C8F537 /* Main.storyboard in Resources */,
+				1A733CA81D8B08BC00B8AE78 /* MapTableViewCell.xib in Resources */,
 				1A733CA31D8B01A100B8AE78 /* FlagTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +510,7 @@
 			files = (
 				1A733C8A1D8AC17700B8AE78 /* CountryDetailTableViewController.m in Sources */,
 				1A3082671D8989D900C8F537 /* CountryListTableViewController.m in Sources */,
+				1A733CA71D8B08BC00B8AE78 /* MapTableViewCell.m in Sources */,
 				1A3082451D8988C800C8F537 /* AppDelegate.m in Sources */,
 				1A3082701D898CDD00C8F537 /* Network.m in Sources */,
 				1A733C951D8AF50100B8AE78 /* Activity.m in Sources */,
