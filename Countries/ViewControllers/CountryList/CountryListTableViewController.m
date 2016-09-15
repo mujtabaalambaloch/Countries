@@ -33,18 +33,13 @@
     [self apiRequest];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - API Request 
+#pragma mark - API Request
 
 - (void)apiRequest {
-    
     [Activity showLoadingIndicator];
     [viewModel apiRequestAllCountries:^(BOOL success) {
         [Activity hideLoadingIndicator];
+        
         if (success) {
             [self.tableView reloadData];
         } else {
