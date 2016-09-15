@@ -10,6 +10,7 @@
 #import "CountryListViewModel.h"
 #import "CountryListCell.h"
 #import "UIImageView+WebCache.h"
+#import "CountryDetailTableViewController.h"
 
 @interface CountryListTableViewController () {
     CountryListViewModel *viewModel;
@@ -89,15 +90,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self performSegueWithIdentifier:@"CountryDetail" sender:indexPath];
 }
 
  #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+     
+     NSIndexPath *indexPath = (NSIndexPath *)sender;
+     NSString *code = [viewModel countryCodeAtIndex:indexPath];
+     
+     if ([segue.identifier isEqualToString:@"CountryDetail"] && ![code isEqualToString:@""]) {
+         CountryDetailTableViewController *details = (CountryDetailTableViewController *)segue.destinationViewController;
+         details.countryCode = code;
+     }
+     
  }
 
 @end

@@ -10,7 +10,6 @@
 #import "Network.h"
 #import "APIConstants.h"
 #import "Country.h"
-#import "ImageDownloader.h"
 #import "ImageConstants.h"
 
 @interface CountryListViewModel () {
