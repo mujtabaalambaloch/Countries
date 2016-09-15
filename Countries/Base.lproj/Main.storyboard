@@ -24,8 +24,8 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="otM-uy-oHg">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="37" id="F8d-hc-tSi"/>
-                                                <constraint firstAttribute="height" constant="27" id="w3Q-TR-xcb"/>
+                                                <constraint firstAttribute="width" constant="37" id="BhN-7Y-N3N"/>
+                                                <constraint firstAttribute="height" constant="27" id="Fb0-Vv-vAH"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd9-eO-wIt">
@@ -35,12 +35,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Cd9-eO-wIt" secondAttribute="trailing" constant="8" id="Aoy-t1-Ldd"/>
-                                        <constraint firstItem="Cd9-eO-wIt" firstAttribute="top" secondItem="oLt-C9-WZw" secondAttribute="top" constant="17" id="P8P-95-NwY"/>
-                                        <constraint firstItem="otM-uy-oHg" firstAttribute="leading" secondItem="oLt-C9-WZw" secondAttribute="leading" constant="8" id="Rxd-tm-hd1"/>
-                                        <constraint firstAttribute="bottom" secondItem="otM-uy-oHg" secondAttribute="bottom" constant="13" id="dSS-Ib-bJ7"/>
-                                        <constraint firstItem="otM-uy-oHg" firstAttribute="top" secondItem="oLt-C9-WZw" secondAttribute="top" constant="14" id="o7D-jy-j66"/>
-                                        <constraint firstItem="Cd9-eO-wIt" firstAttribute="leading" secondItem="otM-uy-oHg" secondAttribute="trailing" constant="8" id="s3B-aN-6YZ"/>
+                                        <constraint firstItem="otM-uy-oHg" firstAttribute="leading" secondItem="oLt-C9-WZw" secondAttribute="leading" constant="14" id="03k-8l-x1f"/>
+                                        <constraint firstItem="Cd9-eO-wIt" firstAttribute="leading" secondItem="otM-uy-oHg" secondAttribute="trailing" constant="8" id="3xp-Ex-UYa"/>
+                                        <constraint firstItem="Cd9-eO-wIt" firstAttribute="top" secondItem="oLt-C9-WZw" secondAttribute="top" constant="17" id="N8l-1z-yOf"/>
+                                        <constraint firstAttribute="bottom" secondItem="Cd9-eO-wIt" secondAttribute="bottom" constant="16" id="Y8j-w2-IQn"/>
+                                        <constraint firstItem="otM-uy-oHg" firstAttribute="top" secondItem="oLt-C9-WZw" secondAttribute="top" constant="14" id="ah5-Xx-b9H"/>
+                                        <constraint firstAttribute="trailing" secondItem="Cd9-eO-wIt" secondAttribute="trailing" constant="8" id="aje-NA-YXM"/>
+                                        <constraint firstItem="Cd9-eO-wIt" firstAttribute="leading" secondItem="otM-uy-oHg" secondAttribute="trailing" constant="8" id="dEy-ho-W5J"/>
+                                        <constraint firstAttribute="bottom" secondItem="otM-uy-oHg" secondAttribute="bottom" constant="13" id="hkb-ug-T4E"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -65,7 +67,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uCd-nv-Buh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GTV-Ix-7Fi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GTV-Ix-7Fi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
