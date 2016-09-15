@@ -22,6 +22,7 @@
 		1A3082821D89AE1F00C8F537 /* CountryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3082811D89AE1F00C8F537 /* CountryListCell.m */; };
 		1A733C8A1D8AC17700B8AE78 /* CountryDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A733C891D8AC17700B8AE78 /* CountryDetailTableViewController.m */; };
 		1A733C8E1D8AC25600B8AE78 /* CountryDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A733C8D1D8AC25600B8AE78 /* CountryDetailViewModel.m */; };
+		1A733C951D8AF50100B8AE78 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A733C941D8AF50100B8AE78 /* Activity.m */; };
 		8218E6A72127ADCE29949A29 /* libPods-Countries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8749BA37DBA0903F99E23FE0 /* libPods-Countries.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		1A733C891D8AC17700B8AE78 /* CountryDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryDetailTableViewController.m; path = ViewControllers/CountryDetail/CountryDetailTableViewController.m; sourceTree = "<group>"; };
 		1A733C8C1D8AC25600B8AE78 /* CountryDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryDetailViewModel.h; path = ViewControllers/CountryDetail/CountryDetailViewModel.h; sourceTree = "<group>"; };
 		1A733C8D1D8AC25600B8AE78 /* CountryDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryDetailViewModel.m; path = ViewControllers/CountryDetail/CountryDetailViewModel.m; sourceTree = "<group>"; };
+		1A733C931D8AF50100B8AE78 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = DataLayer/Activity/Activity.h; sourceTree = "<group>"; };
+		1A733C941D8AF50100B8AE78 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = DataLayer/Activity/Activity.m; sourceTree = "<group>"; };
 		4DA7A76D33ED9E9080618081 /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
 		8749BA37DBA0903F99E23FE0 /* libPods-Countries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Countries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D194DF004E444A4D41402E /* libPods-CountriesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CountriesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +219,7 @@
 			children = (
 				1A3082771D8991E200C8F537 /* ObjectClasses */,
 				1A30827E1D89A7E100C8F537 /* ImageDownloader */,
+				1A733C961D8AF50800B8AE78 /* Activity */,
 			);
 			name = DataLayer;
 			sourceTree = "<group>";
@@ -248,6 +252,15 @@
 				1A733C8D1D8AC25600B8AE78 /* CountryDetailViewModel.m */,
 			);
 			name = CountryDetail;
+			sourceTree = "<group>";
+		};
+		1A733C961D8AF50800B8AE78 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				1A733C931D8AF50100B8AE78 /* Activity.h */,
+				1A733C941D8AF50100B8AE78 /* Activity.m */,
+			);
+			name = Activity;
 			sourceTree = "<group>";
 		};
 		84C407FF9F8464A9D4B67A47 /* Frameworks */ = {
@@ -477,6 +490,7 @@
 				1A3082671D8989D900C8F537 /* CountryListTableViewController.m in Sources */,
 				1A3082451D8988C800C8F537 /* AppDelegate.m in Sources */,
 				1A3082701D898CDD00C8F537 /* Network.m in Sources */,
+				1A733C951D8AF50100B8AE78 /* Activity.m in Sources */,
 				1A30827A1D89962100C8F537 /* CountryListViewModel.m in Sources */,
 				1A3082821D89AE1F00C8F537 /* CountryListCell.m in Sources */,
 				1A3082421D8988C800C8F537 /* main.m in Sources */,

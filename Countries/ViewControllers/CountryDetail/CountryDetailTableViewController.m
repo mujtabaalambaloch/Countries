@@ -8,6 +8,7 @@
 
 #import "CountryDetailTableViewController.h"
 #import "CountryDetailViewModel.h"
+#import "Activity.h"
 
 @interface CountryDetailTableViewController () {
     CountryDetailViewModel *viewModel;
@@ -24,9 +25,9 @@
     self.navigationItem.title = @"Country Details";
     
     viewModel = [[CountryDetailViewModel alloc] init];
-    
+    [Activity showLoadingIndicator];
     [viewModel apiRequestCountryDetailCode:_countryCode complete:^(BOOL success) {
-      
+        [Activity hideLoadingIndicator];
         if (success) {
             [self.tableView reloadData];
         } else {

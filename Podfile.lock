@@ -17,6 +17,7 @@ PODS:
   - Mantle (2.0.7):
     - Mantle/extobjc (= 2.0.7)
   - Mantle/extobjc (2.0.7)
+  - MBProgressHUD (1.0.0)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
@@ -24,13 +25,15 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1)
   - Mantle (~> 2.0)
+  - MBProgressHUD (~> 1.0.0)
   - SDWebImage (~> 3.8)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 5e7face18e669a363e13bc21dfc6fb1bcd167d9a
+PODFILE CHECKSUM: 8693334c18ada322b4931ddccd53ef93c8b52a45
 
 COCOAPODS: 1.0.1

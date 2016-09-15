@@ -10,6 +10,7 @@ target 'Countries' do
   pod 'Mantle', '~> 2.0'
   pod 'AFNetworking', '~> 3.1'
   pod 'SDWebImage', '~> 3.8'
+  pod 'MBProgressHUD', '~> 1.0.0'
 
   target 'CountriesTests' do
     inherit! :search_paths

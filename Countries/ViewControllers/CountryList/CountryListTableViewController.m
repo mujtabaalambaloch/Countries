@@ -11,6 +11,7 @@
 #import "CountryListCell.h"
 #import "UIImageView+WebCache.h"
 #import "CountryDetailTableViewController.h"
+#import "Activity.h"
 
 @interface CountryListTableViewController () {
     CountryListViewModel *viewModel;
@@ -40,7 +41,10 @@
 #pragma mark - API Request 
 
 - (void)apiRequest {
+    
+    [Activity showLoadingIndicator];
     [viewModel apiRequestAllCountries:^(BOOL success) {
+        [Activity hideLoadingIndicator];
         if (success) {
             [self.tableView reloadData];
         } else {
