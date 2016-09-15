@@ -64,13 +64,33 @@
 
 #pragma mark - Table Data Methods
 
+
+
 - (NSInteger)numberOfSections {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section {
+    
+    if (section == 0) {
+        return 1;
+    }
+    
     return labelsArray.count;
 }
+
+//Section - 0
+
+- (NSString *)countryName {
+    return countryModel.name;
+}
+
+- (NSURL *)countryImageURL {
+    NSString *imageURL = [NSString stringWithFormat:ImageBaseURL,countryModel.alpha2Code];
+    return [NSURL URLWithString:imageURL];
+}
+
+//Section - 1
 
 - (NSString *)labelAtIndex:(NSIndexPath *)indexPath {
     return labelsArray[indexPath.row];
@@ -79,5 +99,8 @@
 - (NSString *)valuesAtIndex:(NSIndexPath *)indexPath {
     return valuesArray[indexPath.row];
 }
+
+
+
 
 @end

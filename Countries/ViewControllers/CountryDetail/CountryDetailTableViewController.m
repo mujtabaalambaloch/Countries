@@ -9,6 +9,8 @@
 #import "CountryDetailTableViewController.h"
 #import "CountryDetailViewModel.h"
 #import "Activity.h"
+#import "FlagTableViewCell.h"
+#import "UIImageView+WebCache.h"
 
 @interface CountryDetailTableViewController () {
     CountryDetailViewModel *viewModel;
@@ -18,11 +20,15 @@
 
 @implementation CountryDetailTableViewController
 
+static NSString *const FlagCell = @"FlagCell";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     self.navigationItem.title = @"Country Details";
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"FlagTableViewCell" bundle:nil] forCellReuseIdentifier:FlagCell];
     
     viewModel = [[CountryDetailViewModel alloc] init];
     [Activity showLoadingIndicator];
@@ -47,12 +53,30 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [viewModel labelAtIndex:indexPath];
-    cell.detailTextLabel.text = [viewModel valuesAtIndex:indexPath];
-    
-    return cell;
+    if (indexPath.section == 0) {
+        
+       FlagTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FlagCell forIndexPath:indexPath];
+        
+        cell.countryNameLabel.text = [viewModel countryName];
+        
+        [cell.flagImageView sd_setImageWithURL:[viewModel countryImageURL] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            
+            if (error) {
+                cell.flagImageView.image = [UIImage imageNamed:@"NoImage"];
+            }
+        }];
+        
+        return cell;
+        
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+        
+        cell.textLabel.text = [viewModel labelAtIndex:indexPath];
+        cell.detailTextLabel.text = [viewModel valuesAtIndex:indexPath];
+        
+        return cell;
+    }
 }
 
 /*

@@ -19,6 +19,11 @@ typedef void (^Completion)(BOOL success);
 #pragma mark - Table Data Methods
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
+//Section - 0
+- (NSString *)countryName;
+- (NSURL *)countryImageURL;
+
+//Section - 1
 - (NSString *)labelAtIndex:(NSIndexPath *)indexPath;
 - (NSString *)valuesAtIndex:(NSIndexPath *)indexPath;
 

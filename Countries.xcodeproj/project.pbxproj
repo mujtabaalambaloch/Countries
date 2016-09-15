@@ -23,6 +23,8 @@
 		1A733C8A1D8AC17700B8AE78 /* CountryDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A733C891D8AC17700B8AE78 /* CountryDetailTableViewController.m */; };
 		1A733C8E1D8AC25600B8AE78 /* CountryDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A733C8D1D8AC25600B8AE78 /* CountryDetailViewModel.m */; };
 		1A733C951D8AF50100B8AE78 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A733C941D8AF50100B8AE78 /* Activity.m */; };
+		1A733CA21D8B01A100B8AE78 /* FlagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A733CA01D8B01A100B8AE78 /* FlagTableViewCell.m */; };
+		1A733CA31D8B01A100B8AE78 /* FlagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A733CA11D8B01A100B8AE78 /* FlagTableViewCell.xib */; };
 		8218E6A72127ADCE29949A29 /* libPods-Countries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8749BA37DBA0903F99E23FE0 /* libPods-Countries.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,9 @@
 		1A733C8D1D8AC25600B8AE78 /* CountryDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryDetailViewModel.m; path = ViewControllers/CountryDetail/CountryDetailViewModel.m; sourceTree = "<group>"; };
 		1A733C931D8AF50100B8AE78 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = DataLayer/Activity/Activity.h; sourceTree = "<group>"; };
 		1A733C941D8AF50100B8AE78 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = DataLayer/Activity/Activity.m; sourceTree = "<group>"; };
+		1A733C9F1D8B01A100B8AE78 /* FlagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlagTableViewCell.h; path = ViewControllers/CountryDetail/FlagTableViewCell.h; sourceTree = "<group>"; };
+		1A733CA01D8B01A100B8AE78 /* FlagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlagTableViewCell.m; path = ViewControllers/CountryDetail/FlagTableViewCell.m; sourceTree = "<group>"; };
+		1A733CA11D8B01A100B8AE78 /* FlagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FlagTableViewCell.xib; path = ViewControllers/CountryDetail/FlagTableViewCell.xib; sourceTree = "<group>"; };
 		4DA7A76D33ED9E9080618081 /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
 		8749BA37DBA0903F99E23FE0 /* libPods-Countries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Countries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D194DF004E444A4D41402E /* libPods-CountriesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CountriesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +255,9 @@
 				1A733C891D8AC17700B8AE78 /* CountryDetailTableViewController.m */,
 				1A733C8C1D8AC25600B8AE78 /* CountryDetailViewModel.h */,
 				1A733C8D1D8AC25600B8AE78 /* CountryDetailViewModel.m */,
+				1A733C9F1D8B01A100B8AE78 /* FlagTableViewCell.h */,
+				1A733CA01D8B01A100B8AE78 /* FlagTableViewCell.m */,
+				1A733CA11D8B01A100B8AE78 /* FlagTableViewCell.xib */,
 			);
 			name = CountryDetail;
 			sourceTree = "<group>";
@@ -376,6 +384,7 @@
 				1A3082501D8988C900C8F537 /* LaunchScreen.storyboard in Resources */,
 				1A30824D1D8988C900C8F537 /* Assets.xcassets in Resources */,
 				1A30824B1D8988C800C8F537 /* Main.storyboard in Resources */,
+				1A733CA31D8B01A100B8AE78 /* FlagTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +502,7 @@
 				1A733C951D8AF50100B8AE78 /* Activity.m in Sources */,
 				1A30827A1D89962100C8F537 /* CountryListViewModel.m in Sources */,
 				1A3082821D89AE1F00C8F537 /* CountryListCell.m in Sources */,
+				1A733CA21D8B01A100B8AE78 /* FlagTableViewCell.m in Sources */,
 				1A3082421D8988C800C8F537 /* main.m in Sources */,
 				1A30827D1D89A7DC00C8F537 /* ImageDownloader.m in Sources */,
 				1A733C8E1D8AC25600B8AE78 /* CountryDetailViewModel.m in Sources */,
