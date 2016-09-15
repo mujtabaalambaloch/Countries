@@ -26,6 +26,8 @@
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
+    [self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
+    
     viewModel = [[CountryListViewModel alloc] init];
     [self apiRequest];
 }

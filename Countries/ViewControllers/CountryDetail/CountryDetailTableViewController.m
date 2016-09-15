@@ -21,6 +21,8 @@
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
+    self.navigationItem.title = @"Country Details";
+    
     viewModel = [[CountryDetailViewModel alloc] init];
     
     [viewModel apiRequestCountryDetailCode:_countryCode complete:^(BOOL success) {
