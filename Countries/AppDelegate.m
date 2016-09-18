@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "NoConnectionViewController.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +18,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reachabilityChanged)
+                                                 name:AFNetworkingReachabilityDidChangeNotification
+                                               object:nil];
+    
     return YES;
 }
 
@@ -47,5 +55,30 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Reachability
+
+- (void)reachabilityChanged {
+    BOOL status = [AFNetworkReachabilityManager sharedManager].reachable;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    NoConnectionViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"NoConnection"];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if (!status) {
+        [[appDelegate window] addSubview:controller.view];
+    } else {
+        NSArray *subViewArray = [[appDelegate window] subviews];
+        for (UIView *view in subViewArray) {
+            
+            if (view.tag == 100) {
+                [view removeFromSuperview];
+                UIViewController *view = ((UINavigationController*)appDelegate.window.rootViewController).visibleViewController;
+                [view viewDidLoad];
+                [view viewDidAppear:YES];
+                [view viewDidAppear:YES];
+            }
+        }
+    }
+}
 
 @end
