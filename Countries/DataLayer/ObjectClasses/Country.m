@@ -40,4 +40,17 @@
     }];
 }
 
++ (NSValueTransformer *)populationJSONTransformer {
+    
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        
+        if (value == nil) {
+            return [NSNumber numberWithInteger:0];
+        } else {
+            return value;
+        }
+    }];
+}
+
+
 @end

@@ -131,4 +131,26 @@
     return [self countryModelAtIndex:indexPath].alpha2Code;
 }
 
+#pragma mark - Automatically Reload API (Set/Should Reload)
+
+- (void)setRefreshAPI {
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.minute = 1;
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *date = [calendar dateByAddingComponents:dayComponent toDate:[NSDate date] options:0];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:date forKey:@"ReloadAPI"];
+    [defaults synchronize];
+}
+
+- (BOOL)shouldReloadAPI {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDate *reloadDate = [defaults valueForKey:@"ReloadAPI"];
+    if ([reloadDate compare:[NSDate date]] == NSOrderedAscending || [reloadDate compare:[NSDate date]] == NSOrderedSame) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
 @end

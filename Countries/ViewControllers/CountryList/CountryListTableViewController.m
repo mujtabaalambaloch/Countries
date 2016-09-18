@@ -15,6 +15,7 @@
 
 @interface CountryListTableViewController () {
     CountryListViewModel *viewModel;
+    BOOL isLoadingAPI;
 }
 
 @end
@@ -40,9 +41,18 @@
                   forControlEvents:UIControlEventValueChanged];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([viewModel shouldReloadAPI] && !isLoadingAPI) {
+        [self apiRequest];
+    }
+}
+
 #pragma mark - API Request
 
 - (void)apiRequest {
+    
+    isLoadingAPI = TRUE;
     
     if (!self.refreshControl) {
         [Activity showLoadingIndicator];
@@ -52,6 +62,7 @@
     
     [viewModel apiRequestAllCountries:^(BOOL success) {
         [Activity hideLoadingIndicator];
+        isLoadingAPI = FALSE;
         
         self.tableView.userInteractionEnabled = TRUE;
         if (self.refreshControl) {
@@ -59,6 +70,7 @@
         }
         
         if (success) {
+            [viewModel setRefreshAPI];
             [self.tableView reloadData];
         } else {
             [self alertControllerRetry];

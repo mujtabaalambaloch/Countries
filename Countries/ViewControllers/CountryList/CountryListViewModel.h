@@ -26,4 +26,8 @@ typedef void(^Completed)(UIImage *image);
 - (NSURL *)countryImageURLAtIndex:(NSIndexPath *)indexPath;
 - (NSString *)countryCodeAtIndex:(NSIndexPath *)indexPath;
 
+#pragma mark - Automatically Reload
+- (void)setRefreshAPI;
+- (BOOL)shouldReloadAPI;
+
 @end
