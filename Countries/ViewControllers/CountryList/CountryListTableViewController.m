@@ -33,8 +33,8 @@
     [self apiRequest];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor lightGrayColor];
-    self.refreshControl.tintColor = [UIColor whiteColor];
+    self.refreshControl.backgroundColor = [UIColor whiteColor];
+    self.refreshControl.tintColor = [UIColor blackColor];
     [self.refreshControl addTarget:self
                             action:@selector(apiRequest)
                   forControlEvents:UIControlEventValueChanged];
