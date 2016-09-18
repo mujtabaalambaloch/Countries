@@ -21,7 +21,10 @@
              @"latlng":@"latlng",
              @"population": @"population",
              @"area":@"area",
-             @"currencies":@"currencies"
+             @"currencies":@"currencies",
+             @"topLevelDomain":@"topLevelDomain",
+             @"languages":@"languages",
+             @"numericCode":@"numericCode"
              };
 }
 

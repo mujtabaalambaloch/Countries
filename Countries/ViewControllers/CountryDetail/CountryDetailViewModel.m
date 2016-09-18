@@ -52,7 +52,7 @@
         NSError *error = nil;
         countryModel = [MTLJSONAdapter modelOfClass:Country.class fromJSONDictionary:dict error:&error];
         
-        labelsArray = @[@"Capital", @"Population",@"Calling Code", @"Currencies", @"Alpha Codes"];
+        labelsArray = @[@"Capital", @"Population",@"Calling Code", @"Currencies", @"Top Domains", @"Alpha Codes", @"Languages", @"Numeric Code"];
         
         NSString *population = [NSNumberFormatter localizedStringFromNumber:@(countryModel.population) numberStyle:NSNumberFormatterDecimalStyle];
         
@@ -70,9 +70,34 @@
             }
         }
         
+        NSMutableString *domains = [[NSMutableString alloc] init];
+        
+        for (NSInteger i = 0; i < countryModel.topLevelDomain.count; i++) {
+            
+            if (i == 0) {
+                [domains appendString:countryModel.topLevelDomain[i]];
+            } else {
+                [domains appendString:@","];
+                [domains appendString:countryModel.topLevelDomain[i]];
+            }
+        }
+        
+        
+        NSMutableString *lang = [[NSMutableString alloc] init];
+        
+        for (NSInteger i = 0; i < countryModel.languages.count; i++) {
+            
+            if (i == 0) {
+                [lang appendString:countryModel.languages[i]];
+            } else {
+                [lang appendString:@","];
+                [lang appendString:countryModel.languages[i]];
+            }
+        }
+        
         NSString *alphaCodes = [NSString stringWithFormat:@"%@, %@", countryModel.alpha2Code, countryModel.alpha3Code];
         
-        valuesArray = @[countryModel.capital,population,callingCode, currencies, alphaCodes];
+        valuesArray = @[countryModel.capital,population,callingCode, currencies, domains, alphaCodes, lang, countryModel.numericCode];
     }
 }
 
@@ -88,7 +113,7 @@
         return 1;
     }
     
-    return labelsArray.count;
+    return valuesArray.count;
 }
 
 //Section - 0

@@ -21,4 +21,8 @@
 @property (nonatomic, assign, readonly) NSInteger population;
 @property (nonatomic, assign, readonly) NSInteger area;
 
+@property (nonatomic, copy, readonly) NSArray * topLevelDomain;
+@property (nonatomic, copy, readonly) NSArray * languages;
+@property (nonatomic, copy, readonly) NSString * numericCode;
+
 @end
