@@ -31,21 +31,60 @@
     
     viewModel = [[CountryListViewModel alloc] init];
     [self apiRequest];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor lightGrayColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(apiRequest)
+                  forControlEvents:UIControlEventValueChanged];
 }
 
 #pragma mark - API Request
 
 - (void)apiRequest {
-    [Activity showLoadingIndicator];
+    
+    if (!self.refreshControl) {
+        [Activity showLoadingIndicator];
+    } else {
+        self.tableView.userInteractionEnabled = FALSE;
+    }
+    
     [viewModel apiRequestAllCountries:^(BOOL success) {
         [Activity hideLoadingIndicator];
+        
+        self.tableView.userInteractionEnabled = TRUE;
+        if (self.refreshControl) {
+            [self.refreshControl endRefreshing];
+        }
         
         if (success) {
             [self.tableView reloadData];
         } else {
-            
+            [self alertControllerRetry];
         }
     }];
+}
+
+#pragma mark - Alert Controller 
+
+- (void)alertControllerRetry {
+    
+    UIAlertController *alert = [UIAlertController
+                                  alertControllerWithTitle:@"No Data"
+                                  message:@"Unable to get data, please retry again"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction
+                         actionWithTitle:@"Retry"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action) {
+                             [self apiRequest];
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -104,7 +143,6 @@
          CountryDetailTableViewController *details = (CountryDetailTableViewController *)segue.destinationViewController;
          details.countryCode = code;
      }
-     
- }
+}
 
 @end

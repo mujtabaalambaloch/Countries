@@ -41,15 +41,42 @@ static NSString *const MapCell = @"MapCell";
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     viewModel = [[CountryDetailViewModel alloc] init];
+    [self apiRequest];
+}
+
+#pragma mark - API Request
+
+- (void)apiRequest {
     [Activity showLoadingIndicator];
     [viewModel apiRequestCountryDetailCode:_countryCode complete:^(BOOL success) {
         [Activity hideLoadingIndicator];
         if (success) {
             [self.tableView reloadData];
         } else {
-            
+            [self alertControllerRetry];
         }
     }];
+}
+
+#pragma mark - Alert Controller
+
+- (void)alertControllerRetry {
+    
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"No Data"
+                                message:@"Unable to get data, please retry again"
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction
+                         actionWithTitle:@"Retry"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action) {
+                             [self apiRequest];
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
